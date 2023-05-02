@@ -143,10 +143,6 @@ $(".report-btn-color").on({
 
 
 //처음 페이지 설정
-$(document).ready(function(){
-   $('.pandang-pick').click();
-    $('.prev').prop('disabled', true);
-});
 
 function showStore(result) {
    $('.post-container').html('');

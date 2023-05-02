@@ -24,6 +24,7 @@ public class StoreOkController implements Execute {
 		StoreDTO storeDTO = new StoreDTO();
 		int rowCount = 12;
 		int total = storeDAO.getTotal(1);
+		String sessionProfileImg = "";
 		String temp = req.getParameter("page");
 		int page = temp == null ? 1 : Integer.valueOf(temp);
 		int startRow = (page-1)*rowCount;
@@ -35,7 +36,9 @@ public class StoreOkController implements Execute {
 		
 		HttpSession session = req.getSession();
 		SnsDAO snsDAO = new SnsDAO();
-		String sessionProfileImg = snsDAO.sessionProfileImg((Integer)session.getAttribute("memberNumber"));
+		if(session.getAttribute("memberNumber")!=null) {
+			sessionProfileImg = snsDAO.sessionProfileImg((Integer)session.getAttribute("memberNumber"));
+		}
 			
 		req.setAttribute("sessionProfileImg", sessionProfileImg);
 		
