@@ -21,18 +21,7 @@ public class JoinOkController implements Execute {
 		ChannelDTO channelDTO = new ChannelDTO();
 
 		String memberBirth = null;
-//		private String memberId;
-//		private String memberPassword;
-//		private String memberName;
-//		private String memberNickname;
-//		private String memberBirth;
-//		private String memberGender;
-//		private String memberPhoneNumber;
-//		private String memberEmail;
-//		private String memberAsk;
-//		private String memberAnswer;
-//		private String memberAddress;
-//		private String memberAddressDetail;
+
 		req.setCharacterEncoding("utf-8");
 		memberBirth = req.getParameter("memberBirthYear") + '.' + req.getParameter("memberBirthMonth") + '.'
 				+ req.getParameter("memberBirthDay");
